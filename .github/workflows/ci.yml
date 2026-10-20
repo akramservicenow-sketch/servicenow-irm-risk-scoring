@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [18, 20]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      # No dependencies: tests use node:test and load the ServiceNow scripts into node:vm
+      # with lightweight GlideRecord / gs mocks.
+      - name: Unit tests (core, platform wrappers, ES5 compatibility)
+        run: npm test
+
+      - name: Sample report is reproducible and committed
+        run: |
+          npm run report
+          git diff --exit-code docs/sample-report.md
+
+      - name: Upload sample report
+        if: matrix.node == 20
+        uses: actions/upload-artifact@v4
+        with:
+          name: sample-risk-report
+          path: docs/sample-report.md
+          retention-days: 14
