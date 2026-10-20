@@ -1,0 +1,140 @@
+{
+  "description": "Synthetic risk register for demonstration and tests. All entities, risks and controls are fictional.",
+  "asOf": "2026-01-15",
+  "entities": [
+    { "id": "ENT-01", "name": "Online Payments Platform" },
+    { "id": "ENT-02", "name": "Customer Self-Service Portal" },
+    { "id": "ENT-03", "name": "Enterprise Data Warehouse" },
+    { "id": "ENT-04", "name": "Facilities and Workplace Services" }
+  ],
+  "risks": [
+    {
+      "id": "RSK-001", "entity": "ENT-01", "category": "Cyber", "weight": 3,
+      "title": "Credential stuffing against customer accounts",
+      "likelihood": 4, "impact": 5,
+      "controls": [
+        { "id": "CTL-001", "name": "Adaptive multi-factor authentication", "design": "effective", "operating": "largely_effective" },
+        { "id": "CTL-002", "name": "Bot detection and rate limiting", "design": "largely_effective", "operating": "partially_effective" }
+      ]
+    },
+    {
+      "id": "RSK-002", "entity": "ENT-01", "category": "Operational", "weight": 3,
+      "title": "Payment gateway outage during peak trading",
+      "likelihood": 3, "impact": 5,
+      "controls": [
+        { "id": "CTL-003", "name": "Active-active gateway failover", "design": "effective", "operating": "not_tested" }
+      ]
+    },
+    {
+      "id": "RSK-003", "entity": "ENT-01", "category": "Compliance", "weight": 2,
+      "title": "Card data stored outside the tokenisation vault",
+      "likelihood": 2, "impact": 5,
+      "controls": [
+        { "id": "CTL-004", "name": "Quarterly data discovery scans", "design": "effective", "operating": "effective" },
+        { "id": "CTL-005", "name": "Database activity monitoring", "design": "partially_effective", "operating": "partially_effective" }
+      ]
+    },
+    {
+      "id": "RSK-004", "entity": "ENT-01", "category": "Third Party", "weight": 1,
+      "title": "Fraud-scoring vendor model drift",
+      "likelihood": 3, "impact": 3,
+      "controls": [
+        { "id": "CTL-006", "name": "Monthly vendor performance review", "design": "partially_effective", "operating": "effective" }
+      ]
+    },
+    {
+      "id": "RSK-005", "entity": "ENT-02", "category": "Cyber", "weight": 2,
+      "title": "Unpatched web framework vulnerability",
+      "likelihood": 4, "impact": 4,
+      "controls": [
+        { "id": "CTL-007", "name": "Monthly patch cycle", "design": "largely_effective", "operating": "partially_effective" },
+        { "id": "CTL-008", "name": "Web application firewall", "design": "effective", "operating": "effective", "active": false }
+      ]
+    },
+    {
+      "id": "RSK-006", "entity": "ENT-02", "category": "Operational", "weight": 1,
+      "title": "Release defects reaching production",
+      "likelihood": 4, "impact": 2,
+      "controls": [
+        { "id": "CTL-009", "name": "Automated regression suite", "design": "effective", "operating": "largely_effective" }
+      ]
+    },
+    {
+      "id": "RSK-007", "entity": "ENT-02", "category": "Compliance", "weight": 2,
+      "title": "Accessibility non-conformance",
+      "likelihood": 3, "impact": 3,
+      "controls": []
+    },
+    {
+      "id": "RSK-008", "entity": "ENT-02", "category": "Third Party", "weight": 1,
+      "title": "Chat widget vendor collects excess personal data",
+      "likelihood": 2, "impact": 4,
+      "controls": [
+        { "id": "CTL-010", "name": "Vendor privacy assessment", "design": "ineffective", "operating": "effective" }
+      ]
+    },
+    {
+      "id": "RSK-009", "entity": "ENT-03", "category": "Cyber", "weight": 3,
+      "title": "Over-privileged analyst access to sensitive marts",
+      "likelihood": 3, "impact": 4,
+      "controls": [
+        { "id": "CTL-011", "name": "Quarterly access recertification", "design": "effective", "operating": "partially_effective" },
+        { "id": "CTL-012", "name": "Column-level masking", "design": "effective", "operating": "effective" }
+      ]
+    },
+    {
+      "id": "RSK-010", "entity": "ENT-03", "category": "Operational", "weight": 2,
+      "title": "Nightly load failures delay management reporting",
+      "likelihood": 4, "impact": 3,
+      "controls": [
+        { "id": "CTL-013", "name": "Pipeline monitoring and paging", "design": "largely_effective", "operating": "largely_effective" }
+      ]
+    },
+    {
+      "id": "RSK-011", "entity": "ENT-03", "category": "Compliance", "weight": 2,
+      "title": "Retention schedule not applied to archived data",
+      "likelihood": 3, "impact": 4,
+      "controls": [
+        { "id": "CTL-014", "name": "Automated retention purge job", "design": "partially_effective", "operating": "not_tested" }
+      ]
+    },
+    {
+      "id": "RSK-012", "entity": "ENT-03", "category": "Financial Reporting", "weight": 3,
+      "title": "Unreconciled revenue figures in board pack",
+      "likelihood": 2, "impact": 5,
+      "controls": [
+        { "id": "CTL-015", "name": "Dual sign-off on reconciliations", "design": "effective", "operating": "effective" }
+      ]
+    },
+    {
+      "id": "RSK-013", "entity": "ENT-04", "category": "Operational", "weight": 2,
+      "title": "Extended power loss at primary office",
+      "likelihood": 2, "impact": 4,
+      "controls": [
+        { "id": "CTL-016", "name": "Generator with monthly load test", "design": "effective", "operating": "largely_effective" }
+      ]
+    },
+    {
+      "id": "RSK-014", "entity": "ENT-04", "category": "Health and Safety", "weight": 2,
+      "title": "Contractor injury during maintenance work",
+      "likelihood": 2, "impact": 3,
+      "controls": [
+        { "id": "CTL-017", "name": "Permit-to-work process", "design": "effective", "operating": "partially_effective" }
+      ]
+    },
+    {
+      "id": "RSK-015", "entity": "ENT-04", "category": "Third Party", "weight": 1,
+      "title": "Cleaning contractor insolvency",
+      "likelihood": 1, "impact": 2,
+      "controls": []
+    },
+    {
+      "id": "RSK-016", "entity": "ENT-04", "category": "Cyber", "weight": 1,
+      "title": "Building management system exposed to the internet",
+      "likelihood": 3, "impact": 5,
+      "controls": [
+        { "id": "CTL-018", "name": "Network segmentation", "design": "partially_effective", "operating": "partially_effective" }
+      ]
+    }
+  ]
+}
