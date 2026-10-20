@@ -1,0 +1,13 @@
+{
+  "appetite": { "appetite": 6, "tolerance": 12 },
+  "appetiteByCategory": {
+    "Cyber": { "appetite": 4, "tolerance": 9 },
+    "Compliance": { "appetite": 4, "tolerance": 9 }
+  },
+  "designWeight": 0.4,
+  "operatingWeight": 0.6,
+  "controlAggregation": "complement",
+  "maxReduction": 0.8,
+  "reviewIntervalDays": { "Low": 365, "Moderate": 180, "High": 90, "Critical": 30 },
+  "entityAggregation": "weighted_average"
+}
