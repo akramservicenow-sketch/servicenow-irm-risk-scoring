@@ -1,0 +1,28 @@
+{
+  "name": "servicenow-irm-risk-scoring",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Configurable risk scoring engine for ServiceNow scoped apps: inherent and residual risk, control effectiveness, appetite thresholds, entity roll-up and review scheduling.",
+  "scripts": {
+    "test": "node --test",
+    "report": "node scripts/generate-report.js"
+  },
+  "keywords": [
+    "servicenow",
+    "irm",
+    "grc",
+    "risk-management",
+    "iso-31000",
+    "nist-800-30",
+    "script-include"
+  ],
+  "author": "Shaik Akram",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akramservicenow-sketch/servicenow-irm-risk-scoring.git"
+  }
+}

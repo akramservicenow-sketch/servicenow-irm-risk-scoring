@@ -1,0 +1,9 @@
+node_modules/
+coverage/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+# Local scoring overrides (copy from config/scoring-config.example.json)
+config/scoring-config.local.json
